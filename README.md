@@ -1,4 +1,4 @@
-readme = """# 🔒 FraudGuard: Real-Time Fraud Detection Platform
+ """# 🔒 FraudGuard: Real-Time Fraud Detection Platform
 
 *Streaming Pipeline for Instant Transaction Risk Intelligence*
 
