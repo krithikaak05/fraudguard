@@ -18,7 +18,6 @@
 - [Dashboard Features](#-dashboard-features)
 - [Key Results](#-key-results)
 - [Project Structure](#-project-structure)
-- [Key Design Decisions](#-key-design-decisions)
 
 ---
 
