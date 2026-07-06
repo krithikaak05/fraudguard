@@ -346,8 +346,9 @@ with tab2:
     st.markdown("<div class=\"section-header\">Top Flagged Transactions</div>", unsafe_allow_html=True)
     st.markdown("<div class=\"section-sub\">The highest value transactions currently flagged as fraudulent.</div>", unsafe_allow_html=True)
     if silver is not None:
-        flagged = silver[silver["isFraud"]==1][["TransactionID","TransactionAmt","card4","card6","P_emaildomain"]].drop_duplicates().sort_values("TransactionAmt", ascending=False).head(10)
-        flagged = flagged.rename(columns={"TransactionID":"Transaction ID","TransactionAmt":"Amount ($)","card4":"Card Network","card6":"Card Type","P_emaildomain":"Email Domain"})
+        flagged = silver[silver["isFraud"]==1][["TransactionAmt","card4","card6","P_emaildomain"]].drop_duplicates().sort_values("TransactionAmt", ascending=False).head(10)
+        flagged = flagged.rename(columns={"TransactionAmt":"Amount ($)","card4":"Card Network","card6":"Card Type","P_emaildomain":"Email Domain"})
+        flagged["Email Domain"] = flagged["Email Domain"].replace("0", "Unknown")
         flagged["Card Network"] = flagged["Card Network"].str.title()
         flagged["Card Type"] = flagged["Card Type"].str.title()
         flagged["Status"] = "🔴 Fraud"
