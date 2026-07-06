@@ -214,14 +214,4 @@ fraudguard/
 
 ---
 
-## 🔮 Key Design Decisions
-
-- PySpark 3.5.3 with Scala 2.12 connectors chosen for Iceberg compatibility
-- Kafka KRaft mode used instead of Zookeeper for a simpler, production-ready local setup
-- Hadoop catalog used for Iceberg to avoid additional REST catalog infrastructure
-- DuckDB reads Iceberg Parquet files directly in the dashboard, avoiding a running Spark session
-- `scale_pos_weight` applied in XGBoost to handle the 3.5% fraud class imbalance
-
----
-
 *Built with Kafka · Spark Structured Streaming · Apache Iceberg · XGBoost · DuckDB · Streamlit*
