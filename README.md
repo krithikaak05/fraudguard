@@ -18,6 +18,7 @@
 - [Dashboard Features](#-dashboard-features)
 - [Key Results](#-key-results)
 - [Project Structure](#-project-structure)
+- [Deployment Note](#-deployment-note)
 
 ---
 
@@ -210,6 +211,14 @@ fraudguard/
 │   └── dashboard.py
 └── .gitignore
 ```
+
+---
+
+## 📌 Deployment Note
+
+FraudGuard is designed as a fully self contained, locally hosted pipeline. All components, including Kafka, Spark Structured Streaming, the Iceberg storage layers, and the Streamlit dashboard, run within Docker on the local machine. This approach keeps the streaming engine and the dashboard tightly coupled for realistic end to end testing, without depending on external cloud infrastructure.
+
+To run the project, clone the repository and start the full stack with `docker-compose up`. Once the containers are running, the dashboard is accessible at `localhost` on the configured port.
 
 ---
 
