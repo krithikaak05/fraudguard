@@ -9,6 +9,7 @@
 ## 📑 Table of Contents
 
 - [Overview](#-overview)
+- [Business Problem](#-business-problem)
 - [Dashboard](#-dashboard)
 - [Architecture](#-architecture)
 - [Tech Stack](#-tech-stack)
@@ -34,6 +35,20 @@
 - 📊 Executive-grade Streamlit dashboard backed by DuckDB
 - ⚡ Sub-second event processing latency
 - 🎯 82% recall on fraudulent transactions
+
+---
+
+## 🎯 Business Problem
+
+Financial institutions and payment processors lose billions annually to transaction fraud, and the cost of catching it late is far higher than catching it in the moment. Most fraud review pipelines are batch based, transactions get flagged hours or days after the fact, by which point funds have often already moved. A fraud team needs a system that scores risk the instant a transaction happens, not after a nightly batch job runs.
+
+**Use case:** A fraud operations or risk team uses this pipeline to answer three questions in real time:
+
+1. Is this specific transaction, right now, likely fraudulent, and should it be approved or blocked?
+2. Where is fraud concentrated, by card network, email domain, or spend tier, so policy and rules can be tightened in the right places?
+3. What is our estimated financial exposure from fraud this period, and is it trending up or down?
+
+This project demonstrates that exact workflow end to end: transactions stream in continuously through Kafka, get processed and scored through a Bronze-Silver-Gold pipeline, and surface in a live dashboard a fraud analyst could use to make an actual approve or block decision on a specific transaction, backed by a model with 82% fraud recall and sub second processing latency.
 
 ---
 
